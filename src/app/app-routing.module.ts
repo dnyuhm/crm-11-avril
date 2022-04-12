@@ -5,6 +5,11 @@ import { PageSignInComponent } from './login/pages/page-sign-in/page-sign-in.com
 const routes: Routes = [
   { path: '', redirectTo: 'sign-in', pathMatch: 'full' },
   { path: 'sign-in', component: PageSignInComponent },
+  {
+    path: 'orders',
+    loadChildren: () =>
+      import('./orders/orders.module').then((m) => m.OrdersModule),
+  },
 ];
 
 @NgModule({
