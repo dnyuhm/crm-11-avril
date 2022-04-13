@@ -12,6 +12,5 @@ export class PageListOrdersComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log('toto');
   }
 }
