@@ -1,9 +1,9 @@
-import { Directive, HostBinding, Input } from '@angular/core';
+import { Directive, HostBinding, Input, OnChanges } from '@angular/core';
 
 @Directive({
   selector: '[appState]',
 })
-export class StateDirective {
+export class StateDirective implements OnChanges {
   @Input() public appState!: string;
   @HostBinding('class') public tdClassName!: string;
   constructor() {}

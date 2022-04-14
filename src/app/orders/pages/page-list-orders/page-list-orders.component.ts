@@ -16,7 +16,7 @@ export class PageListOrdersComponent implements OnInit {
   public headers: string[];
 
   constructor(private ordersService: OrdersService) {
-    this.myTitle = 'my list of beautiful orders';
+    this.myTitle = 'Orders';
     this.collection$ = this.ordersService.collection$;
     this.states = Object.values(StateOrder);
     this.headers = [
@@ -36,7 +36,7 @@ export class PageListOrdersComponent implements OnInit {
     this.myTitle = 'mon titre change par magie';
   }
 
-  public changeState(item: Order, event: any) {
+  public changeState(item: Order, event: any): void {
     const state = event.target.value;
     this.ordersService.changeState(item, state).subscribe((data) => {
       Object.assign(item, data);
